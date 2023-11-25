@@ -14,4 +14,8 @@
     <ProjectReference Include="..\Royex.Domain\Royex.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repository\" />
+  </ItemGroup>
+
 </Project>

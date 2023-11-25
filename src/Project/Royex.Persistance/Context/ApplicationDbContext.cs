@@ -16,6 +16,7 @@ namespace Royex.Persistance.Context
 
             base.OnConfiguring(optionsBuilder);
         }
+        public DbSet<TEntity> DbSet<TEntity>() where TEntity : class => Set<TEntity>();
 
         public DbSet<Manager> Manager { get; }
 
