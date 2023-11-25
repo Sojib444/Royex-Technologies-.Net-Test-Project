@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Context\" />
+    <Folder Include="Repository\GeneralManagerRepository\" />
+    <Folder Include="Repository\OfficeExecutiveRepository\" />
   </ItemGroup>
 
 </Project>

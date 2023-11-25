@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Rpyex.Application\Rpyex.Application.csproj" />
+  </ItemGroup>
+
 </Project>
