@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Royex.Presentation", "Royex.Presentation\Royex.Presentation.csproj", "{D29699B6-74E9-4BDB-9566-F13193F5B66E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Royex.Domain", "Royex.Domain\Royex.Domain.csproj", "{A96CF3DD-C066-45AB-8D37-E69BADF96473}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libraries", "libraries", "{0628C9C6-48E7-45AC-A238-E1FC84823EA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Royex.Persistance", "Royex.Persistance\Royex.Persistance.csproj", "{D81634B2-CDE5-43EC-A9D7-5E12FC1CE006}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rpyex.Application", "Rpyex.Application\Rpyex.Application.csproj", "{1B0E58FB-502D-4A42-A232-E9142C201F4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D29699B6-74E9-4BDB-9566-F13193F5B66E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D29699B6-74E9-4BDB-9566-F13193F5B66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D29699B6-74E9-4BDB-9566-F13193F5B66E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D29699B6-74E9-4BDB-9566-F13193F5B66E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A96CF3DD-C066-45AB-8D37-E69BADF96473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A96CF3DD-C066-45AB-8D37-E69BADF96473}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A96CF3DD-C066-45AB-8D37-E69BADF96473}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A96CF3DD-C066-45AB-8D37-E69BADF96473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81634B2-CDE5-43EC-A9D7-5E12FC1CE006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81634B2-CDE5-43EC-A9D7-5E12FC1CE006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81634B2-CDE5-43EC-A9D7-5E12FC1CE006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81634B2-CDE5-43EC-A9D7-5E12FC1CE006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B0E58FB-502D-4A42-A232-E9142C201F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B0E58FB-502D-4A42-A232-E9142C201F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B0E58FB-502D-4A42-A232-E9142C201F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B0E58FB-502D-4A42-A232-E9142C201F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A96CF3DD-C066-45AB-8D37-E69BADF96473} = {0628C9C6-48E7-45AC-A238-E1FC84823EA1}
+		{D81634B2-CDE5-43EC-A9D7-5E12FC1CE006} = {0628C9C6-48E7-45AC-A238-E1FC84823EA1}
+		{1B0E58FB-502D-4A42-A232-E9142C201F4D} = {0628C9C6-48E7-45AC-A238-E1FC84823EA1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5006E2C3-CC7C-49A8-96A4-09EFA3FFFB7A}
+	EndGlobalSection
+EndGlobal
