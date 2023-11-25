@@ -9,6 +9,5 @@ namespace Rpyex.Application.Context
         DbSet<Manager> Manager { get; }
         DbSet<GeneralManager> GeneralManager { get; }
         DbSet<OfficeExecutive> OfficeExecutives { get; }
-        Task SaveChage();
     }
 }

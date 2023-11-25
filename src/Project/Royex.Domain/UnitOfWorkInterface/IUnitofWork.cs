@@ -2,6 +2,5 @@
 {
     public interface IUnitofWork : IDisposable
     {
-        Task SaveChangeAsync();
     }
 }

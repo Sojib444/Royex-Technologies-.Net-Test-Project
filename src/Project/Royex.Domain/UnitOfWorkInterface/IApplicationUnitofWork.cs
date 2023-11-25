@@ -1,6 +1,4 @@
-﻿using Royex.Domain.Repository.GeneralManagerRepository;
-using Royex.Domain.Repository.ManagerRepository;
-using Royex.Domain.Repository.OfficeExecutiveRepository;
+﻿using Royex.Domain.RepositoryInterface.EntityRepositoryInterface;
 
 namespace Royex.Domain.UnitOfWork
 {

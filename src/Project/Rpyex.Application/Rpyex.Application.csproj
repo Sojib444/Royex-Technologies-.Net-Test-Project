@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repository\" />
+    <Folder Include="RepositoryImplementation\" />
   </ItemGroup>
 
 </Project>
