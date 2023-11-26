@@ -34,7 +34,7 @@ namespace Royex.Persistance.Context.Configuration
             },
             new GeneralManager()
             {
-                Id = 2,
+                Id = 3,
                 Name = "Osman",
                 Position = Domain.Entity.Shared.Position.GeneralManager,
                 Salary = 200,

@@ -1,4 +1,5 @@
-﻿using Royex.Domain.RepositoryInterface.EntityRepositoryInterface;
+﻿using Microsoft.EntityFrameworkCore;
+using Royex.Domain.RepositoryInterface.EntityRepositoryInterface;
 using Royex.Domain.UnitOfWork;
 using Royex.Persistance.Context;
 using Rpyex.Application.Context;
@@ -14,6 +15,7 @@ namespace Royex.Presentation.Service_Extension
         public static void DependencyServiceConfiguration(this IServiceCollection services)
         {
             //DbContext
+            services.AddScoped<DbContext>();
             services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 
             //UnitofWork

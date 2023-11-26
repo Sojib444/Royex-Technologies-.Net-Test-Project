@@ -11,19 +11,14 @@ namespace Rpyex.Application.UnitofWork
         {
             this.dbContext = dbContext;
         }
-        public async Task Dispose()
+        public void  Dispose()
         {
-            await dbContext.DisposeAsync();
+            dbContext.DisposeAsync();
         }
 
         public async Task SaveChangeAsync()
         {
             await dbContext.SaveChangesAsync();
-        }
-
-        void IDisposable.Dispose()
-        {
-            throw new NotImplementedException();
         }
     }
 }
