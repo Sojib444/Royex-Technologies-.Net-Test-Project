@@ -13,14 +13,16 @@ namespace Rpyex.Application.RepositoryImplementation
             this.applicationDbContext = applicationDbContext;
             dbSet = this.applicationDbContext.DbSet<T>();
         }
-        public Task<IEnumerable<T>> GetAllAsync(bool trackChange, CancellationToken cancellationToken)
+        public async Task<IEnumerable<T>> GetAllAsync(bool trackChange, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return !trackChange ? await dbSet.AsNoTracking().ToListAsync(cancellationToken) :
+               await dbSet.ToListAsync(cancellationToken);
         }
 
-        public Task<T> GetSingleAsync(int id, bool trackChange, CancellationToken cancellationToken)
+        public async Task<T> GetSingleAsync(int id, bool trackChange, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+               return !trackChange ? await dbSet.AsNoTracking().FirstOrDefaultAsync(x => x.Equals(id),cancellationToken) :
+                 await dbSet.FirstOrDefaultAsync(x => x.Equals(id), cancellationToken);
         }
     }
 }

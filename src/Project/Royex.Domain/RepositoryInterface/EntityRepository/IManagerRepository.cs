@@ -1,6 +1,9 @@
-﻿namespace Royex.Domain.RepositoryInterface.EntityRepositoryInterface
+﻿using Royex.Domain.Entity;
+using Royex.Domain.Repository;
+
+namespace Royex.Domain.RepositoryInterface.EntityRepositoryInterface
 {
-    public interface IManagerRepository
+    public interface IManagerRepository : IRepository<Manager>
     {
     }
 }
