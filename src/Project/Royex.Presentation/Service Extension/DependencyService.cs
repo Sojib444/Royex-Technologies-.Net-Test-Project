@@ -1,5 +1,8 @@
-﻿using Royex.Persistance.Context;
+﻿using Royex.Domain.UnitOfWork;
+using Royex.Persistance.Context;
 using Rpyex.Application.Context;
+using Rpyex.Application.UnitofWork;
+using Rpyex.Application.UnitofWorkImplementation;
 
 namespace Royex.Presentation.Service_Extension
 {
@@ -11,7 +14,11 @@ namespace Royex.Presentation.Service_Extension
             services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 
             //UnitofWork
-            services
+            services.AddScoped<IUnitofWork, UnitOfWork>();
+            services.AddScoped<IApplicationUnitofWork, ApplicationUnitofWork>();
+
+            //Repository
+            
         }
     }
 }
