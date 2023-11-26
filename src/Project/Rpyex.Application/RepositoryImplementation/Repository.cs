@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Royex.Domain.Repository;
-using Rpyex.Application.Context;
+using Royex.Application.Context;
 
-namespace Rpyex.Application.RepositoryImplementation
+namespace Royex.Application.RepositoryImplementation
 {
     public class Repository<T> : IRepository<T> where T : class
     {

@@ -1,9 +1,9 @@
 ﻿using Royex.Domain.Entity;
 using Royex.Domain.Repository;
 using Royex.Domain.RepositoryInterface.EntityRepositoryInterface;
-using Rpyex.Application.Context;
+using Royex.Application.Context;
 
-namespace Rpyex.Application.RepositoryImplementation.EntityRepository
+namespace Royex.Application.RepositoryImplementation.EntityRepository
 {
     public class GeneralManagerRepository : Repository<GeneralManager>, IGeneralManagerRepostory
     {

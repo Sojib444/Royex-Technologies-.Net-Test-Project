@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Royex.Domain.Entity;
 
-namespace Rpyex.Application.Context
+namespace Royex.Application.Context
 {
     public interface IApplicationDbContext : IDisposable
     {

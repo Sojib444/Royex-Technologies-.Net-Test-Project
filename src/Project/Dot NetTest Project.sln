@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Royex.Domain", "Royex.Domai
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libraries", "libraries", "{0628C9C6-48E7-45AC-A238-E1FC84823EA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Royex.Persistance", "Royex.Persistance\Royex.Persistance.csproj", "{D81634B2-CDE5-43EC-A9D7-5E12FC1CE006}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Royex.Persistance", "Royex.Persistance\Royex.Persistance.csproj", "{D81634B2-CDE5-43EC-A9D7-5E12FC1CE006}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rpyex.Application", "Rpyex.Application\Rpyex.Application.csproj", "{1B0E58FB-502D-4A42-A232-E9142C201F4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Royex.Application", "Rpyex.Application\Royex.Application.csproj", "{1B0E58FB-502D-4A42-A232-E9142C201F4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

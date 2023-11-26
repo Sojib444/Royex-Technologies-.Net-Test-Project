@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Royex.Application.Context;
 using Royex.Domain.Entity;
 using Royex.Persistance.Context.Configuration;
-using Rpyex.Application.Context;
 
 namespace Royex.Persistance.Context
 {

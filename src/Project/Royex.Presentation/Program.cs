@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Royex.Persistance.Context;
 using Royex.Presentation.Service_Extension;
 
@@ -19,6 +20,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
     option.UseSqlServer(connectionString, actiion =>
     actiion.MigrationsAssembly(typeof(Royex.Presentation.PresentationAssemblyReference).Assembly.FullName));
 });
+
+//MediatR package Configuration
+//builder.Services.AddMediatR(typeof(Royex.))
 
 var app = builder.Build();
 

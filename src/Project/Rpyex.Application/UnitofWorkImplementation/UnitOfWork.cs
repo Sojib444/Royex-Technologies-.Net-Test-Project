@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Royex.Domain.UnitOfWork;
 
-namespace Rpyex.Application.UnitofWork
+namespace Royex.Application.UnitofWork
 {
     public class UnitOfWork : IUnitofWork
     {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Royex.Domain.RepositoryInterface.EntityRepositoryInterface;
 using Royex.Domain.UnitOfWork;
-using Rpyex.Application.Context;
-using Rpyex.Application.UnitofWork;
+using Royex.Application.Context;
+using Royex.Application.UnitofWork;
 
 namespace Rpyex.Application.UnitofWorkImplementation
 {

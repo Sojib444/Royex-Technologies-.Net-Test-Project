@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Rpyex.Application\Rpyex.Application.csproj" />
+    <ProjectReference Include="..\Rpyex.Application\Royex.Application.csproj" />
   </ItemGroup>
 
 </Project>
