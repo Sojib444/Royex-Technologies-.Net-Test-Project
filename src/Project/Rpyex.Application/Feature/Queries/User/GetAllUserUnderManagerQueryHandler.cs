@@ -1,22 +1,33 @@
-﻿using MediatR;
+﻿using Mapster;
+using MediatR;
 using Royex.Application.Dto;
 using Royex.Domain.UnitOfWork;
 
 namespace Royex.Application.Feature.Queries.User
 {
-    public class GetAllUserUnderManagerQueryHandler : 
-        IRequestHandler<GetAllUserUnderManagerQuery, IEnumerable<UserDto>>
+    public class GetAllEmployeeUnderManagerQueryHandler : 
+        IRequestHandler<GetAllEmployeeUnderManagerQuery, IEnumerable<EmployeeDto>>
     {
         private readonly IApplicationUnitofWork applicationUnitofWork;
 
-        public GetAllUserUnderManagerQueryHandler(IApplicationUnitofWork applicationUnitofWork)
+        public GetAllEmployeeUnderManagerQueryHandler(IApplicationUnitofWork applicationUnitofWork)
         {
             this.applicationUnitofWork = applicationUnitofWork;
         }
 
-        public Task<IEnumerable<UserDto>> Handle(GetAllUserUnderManagerQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<EmployeeDto>> Handle(GetAllEmployeeUnderManagerQuery request,
+            CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+                var employee = applicationUnitofWork.EmployeeRepository
+                      .GetAllAsync(request.trackChange, request.cancellationToken).Result;
+
+                if(employee != null)
+                {
+                    List<EmployeeDto> employeeDto = employee.Adapt<List<EmployeeDto>>();
+                    Console.WriteLine(employeeDto);
+                }
+
+            return null;
         }
     }
 }

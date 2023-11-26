@@ -1,5 +1,5 @@
+using Mapster;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Royex.Persistance.Context;
 using Royex.Presentation.Service_Extension;
 
@@ -22,7 +22,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 });
 
 //MediatR package Configuration
-//builder.Services.AddMediatR(typeof(Royex.))
+builder.Services.AddMediatR(x =>
+x.RegisterServicesFromAssembly(typeof(Royex.Application.ApplicationAssemblyReferene).Assembly));
+
+//Adding Mapster
+builder.Services.AddMapster();
 
 var app = builder.Build();
 

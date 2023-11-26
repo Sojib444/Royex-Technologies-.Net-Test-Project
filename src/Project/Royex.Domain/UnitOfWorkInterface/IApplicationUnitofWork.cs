@@ -1,11 +1,9 @@
-﻿using Royex.Domain.RepositoryInterface.EntityRepositoryInterface;
+﻿using Royex.Domain.RepositoryInterface;
 
 namespace Royex.Domain.UnitOfWork
 {
     public interface IApplicationUnitofWork : IUnitofWork
     {
-        IManagerRepository ManagerRepository { get; }
-        IGeneralManagerRepostory GeneralManagerRepostory { get; }
-        IOfficeExecutiveRepository GfficeExecutiveRepository { get; }
+        IEmployeeRepository EmployeeRepository { get; }
     }
 }

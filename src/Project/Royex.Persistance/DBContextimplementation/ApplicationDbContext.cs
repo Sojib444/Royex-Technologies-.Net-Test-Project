@@ -14,18 +14,12 @@ namespace Royex.Persistance.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new ManagerConfiguration());
-            modelBuilder.ApplyConfiguration(new GeneralManagerConfiguration());
-            modelBuilder.ApplyConfiguration(new OfficeExecutiveConfiguration());
+            modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<TEntity> DbSet<TEntity>() where TEntity : class => Set<TEntity>();
 
-        public DbSet<Manager> Manager { get; }
-
-        public DbSet<GeneralManager> GeneralManager { get; }
-
-        public DbSet<OfficeExecutive> OfficeExecutives { get; }
+        public DbSet<Employee> Employees { get; }
     }
 }
