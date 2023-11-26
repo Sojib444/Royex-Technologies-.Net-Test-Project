@@ -22,9 +22,9 @@ namespace Royex.Presentation.Controllers
             return View();
         }
 
-        public IActionResult GetAllEmployeeUnderRoootManager(int id)
+        public async Task<IActionResult> GetAll(int id)
         {
-            mediator.Send(new GetAllEmployeeUnderManagerQuery(id,trackChange:false,cancellationToken:default));
+            var result = await mediator.Send(new GetAllEmployeeUnderManagerQuery(id,trackChange:false,cancellationToken:default));
 
             return View();
         }

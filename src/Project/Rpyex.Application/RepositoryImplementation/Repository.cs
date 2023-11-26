@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Royex.Application.Context;
 using Royex.Domain.Repository;
+using System.Linq.Expressions;
 
 namespace Royex.Application.RepositoryImplementation
 {
@@ -13,15 +14,19 @@ namespace Royex.Application.RepositoryImplementation
             this.applicationDbContext = applicationDbContext;
             dbSet = this.applicationDbContext.DbSet<T>();
         }
-        public async Task<IEnumerable<T>> GetAllAsync(bool trackChange, CancellationToken cancellationToken)
+
+        //Get All Employee by Condition
+        public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> expression, 
+            bool trackChange, CancellationToken cancellationToken)
         {
-            return !trackChange ? dbSet.AsNoTracking().ToList() : dbSet.ToList();
+            return !trackChange ? await dbSet.AsNoTracking().Where(expression).ToListAsync(cancellationToken) :
+                await dbSet.AsTracking().Where(expression).ToListAsync(cancellationToken);
         }
 
-        public async Task<T> GetSingleAsync(int id, bool trackChange, CancellationToken cancellationToken)
+        //Get Single Employee
+        public async Task<T> GetSingleAsync(int id, CancellationToken cancellationToken)
         {
-            return !trackChange ? await dbSet.AsNoTracking().FirstOrDefaultAsync(x => x.Equals(id), cancellationToken) :
-              await dbSet.FirstOrDefaultAsync(x => x.Equals(id), cancellationToken);
+            return await dbSet.FindAsync(id, cancellationToken);
         }
     }
 }
