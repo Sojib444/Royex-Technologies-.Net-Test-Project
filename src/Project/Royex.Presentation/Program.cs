@@ -1,7 +1,24 @@
+using Microsoft.EntityFrameworkCore;
+using Royex.Persistance.Context;
+using Royex.Presentation.Service_Extension;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//ConnectionString
+var connectionString = builder.Configuration.GetConnectionString("DatabaseConnection");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//Dependency Serive Configuration
+builder.Services.DependencyServiceConfiguration();
+
+//Database Configuration
+builder.Services.AddDbContext<ApplicationDbContext>(option =>
+{
+    option.UseSqlServer(connectionString, actiion =>
+    actiion.MigrationsAssembly(typeof(Royex.Presentation.PresentationAssemblyReference).FullName));
+});
 
 var app = builder.Build();
 
