@@ -15,8 +15,4 @@
     <ProjectReference Include="..\Royex.Domain\Royex.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Feature\Query\" />
-  </ItemGroup>
-
 </Project>
