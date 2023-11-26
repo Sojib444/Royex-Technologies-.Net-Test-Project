@@ -10,8 +10,4 @@
     <ProjectReference Include="..\Royex.Persistance\Royex.Persistance.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Service Extension\" />
-  </ItemGroup>
-
 </Project>
