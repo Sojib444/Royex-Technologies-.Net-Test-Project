@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Royex.Domain.Entity;
+using Royex.Persistance.Context.Configuration;
 using Rpyex.Application.Context;
 
 namespace Royex.Persistance.Context
@@ -11,10 +12,13 @@ namespace Royex.Persistance.Context
             
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new ManagerConfiguration());
+            modelBuilder.ApplyConfiguration(new GeneralManagerConfiguration());
+            modelBuilder.ApplyConfiguration(new OfficeExecutiveConfiguration());
 
-            base.OnConfiguring(optionsBuilder);
+            base.OnModelCreating(modelBuilder);
         }
         public DbSet<TEntity> DbSet<TEntity>() where TEntity : class => Set<TEntity>();
 
