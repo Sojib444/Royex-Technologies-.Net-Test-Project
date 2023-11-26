@@ -1,17 +1,13 @@
 ﻿using Royex.Application.Context;
 using Royex.Domain.Entity;
 using Royex.Domain.RepositoryInterface;
-using Royex.Domain.UnitOfWork;
 
 namespace Royex.Application.RepositoryImplementation.EntityRepository
 {
     public class EmployeeRepository : Repository<Employee>, IEmployeeRepository
     {
-        private readonly IApplicationUnitofWork unitofWork;
-
-        public EmployeeRepository(IApplicationDbContext dbContext, IApplicationUnitofWork unitofWork) : base(dbContext)
+        public EmployeeRepository(IApplicationDbContext dbContext) : base(dbContext)
         {
-            this.unitofWork = unitofWork;
         }
 
         public async Task<bool> IsEmployeeJoinedBeforeManager(DateTime magerJoingDate, DateTime employeeJoiningDate)
@@ -26,7 +22,7 @@ namespace Royex.Application.RepositoryImplementation.EntityRepository
         {
             int curruntYear = DateTime.Now.Year;
 
-            return ((curruntYear % 4 == 0 && curruntYear % 100 != 0) || curruntYear % 400 ==0 ) ? true : false;
+            return ((curruntYear % 4 == 0 && curruntYear % 100 != 0) || curruntYear % 400 == 0) ? true : false;
         }
 
         public async Task<bool> IsStayedFourYears(DateTime joiningDate)
