@@ -17,7 +17,7 @@ builder.Services.DependencyServiceConfiguration();
 builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {
     option.UseSqlServer(connectionString, actiion =>
-    actiion.MigrationsAssembly(typeof(Royex.Presentation.PresentationAssemblyReference).FullName));
+    actiion.MigrationsAssembly(typeof(Royex.Presentation.PresentationAssemblyReference).Assembly.FullName));
 });
 
 var app = builder.Build();
