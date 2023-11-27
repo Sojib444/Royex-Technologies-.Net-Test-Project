@@ -37,7 +37,7 @@ namespace Royex.Presentation.Controllers
                 return View(result);
             }
 
-            TempData["Message"] = "Please provide valid employee id.";
+            TempData["Message"] = "Please provide valid employee id";
 
             return RedirectToAction("Index");
         }
