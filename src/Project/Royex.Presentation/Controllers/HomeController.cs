@@ -17,7 +17,7 @@ namespace Royex.Presentation.Controllers
             this.mediator = mediator;
         }
 
-        public IActionResult Index()
+        public  IActionResult Index()
         {
             return View();
         }

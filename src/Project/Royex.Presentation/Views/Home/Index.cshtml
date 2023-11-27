@@ -2,7 +2,22 @@
     ViewData["Title"] = "Home Page";
 }
 
+@section style{
+    <link rel="stylesheet" href="./css/index.css"/>
+}
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p><a class="anchor" href="https://www.royex.ae/" target="_blank">Royex Technologies</a>.</p>
+</div>
+
+<div class="search">
+    <form>
+        <div class="input-div">
+            <label for="employeeId">Employee ID</label><input type="number" id="employeeId"/>
+        </div>
+        <div class="button-div">
+            <button type="submit">Show Salary with Bonus</button>
+        </div>
+        
+    </form>
 </div>
