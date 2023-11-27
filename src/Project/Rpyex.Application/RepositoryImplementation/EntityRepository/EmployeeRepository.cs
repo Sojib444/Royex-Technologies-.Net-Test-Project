@@ -10,7 +10,7 @@ namespace Royex.Application.RepositoryImplementation.EntityRepository
         {
         }
 
-        public async Task<bool> IsEmployeeJoinedBeforeManager(DateTime magerJoingDate, DateTime employeeJoiningDate)
+        public bool IsEmployeeJoinedBeforeManager(DateTime magerJoingDate, DateTime employeeJoiningDate)
         {
             TimeSpan managerTimeSpan = DateTime.Now - magerJoingDate;
             TimeSpan employeeTimeSpan = DateTime.Now - magerJoingDate;
@@ -18,14 +18,14 @@ namespace Royex.Application.RepositoryImplementation.EntityRepository
             return employeeTimeSpan.Days >= managerTimeSpan.Days ? true : false;
         }
 
-        public async Task<bool> IsLeapYear()
+        public bool IsLeapYear()
         {
             int curruntYear = DateTime.Now.Year;
 
             return ((curruntYear % 4 == 0 && curruntYear % 100 != 0) || curruntYear % 400 == 0) ? true : false;
         }
 
-        public async Task<bool> IsStayedFourYears(DateTime joiningDate)
+        public bool IsStayedFourYears(DateTime joiningDate)
         {
             TimeSpan timeSpan = DateTime.Now - joiningDate;
 

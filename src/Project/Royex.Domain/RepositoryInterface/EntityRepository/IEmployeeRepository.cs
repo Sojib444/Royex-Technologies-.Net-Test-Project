@@ -5,8 +5,8 @@ namespace Royex.Domain.RepositoryInterface
 {
     public interface IEmployeeRepository : IRepository<Employee>
     {
-        Task<bool> IsLeapYear();
-        Task<bool> IsStayedFourYears(DateTime joiningDate);
-        Task<bool> IsEmployeeJoinedBeforeManager(DateTime magerJoingDate, DateTime employeeJoiningDate);
+        bool IsLeapYear();
+        bool IsStayedFourYears(DateTime joiningDate);
+        bool IsEmployeeJoinedBeforeManager(DateTime magerJoingDate, DateTime employeeJoiningDate);
     }
 }
