@@ -11,9 +11,9 @@
 </div>
 
 <div class="search">
-    <form>
+    <form asp-controller="home" asp-action="getall">
         <div class="input-div">
-            <label for="employeeId">Employee ID</label><input type="number" id="employeeId"/>
+            <label for="employeeId">Employee ID</label><input type="number" id="employeeId" name="Id"/>
         </div>
         <div class="button-div">
             <button type="submit">Show Salary with Bonus</button>
