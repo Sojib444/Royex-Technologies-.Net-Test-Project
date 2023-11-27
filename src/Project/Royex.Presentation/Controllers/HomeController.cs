@@ -24,6 +24,7 @@ namespace Royex.Presentation.Controllers
 
         public async Task<IActionResult> GetAll(int id)
         {
+            //call the Mediator request Sender
             var result = await mediator.Send(new GetAllEmployeeUnderManagerQuery(id,trackChange:false,cancellationToken:default));
 
             if(result != null)

@@ -5,15 +5,22 @@
 }
 
 <style>
+    h2{
+        text-align:center;
+        text-decoration:underline;
+        font-weight:bold
+    }
+
     table {
         border-collapse: collapse;
         width: 100%;
+        margin:20px auto;
     }
 
     th, td {
         border: 1px solid #ddd;
         padding: 8px;
-        text-align: left;
+        text-align: center;
     }
 
     th {
@@ -24,13 +31,27 @@
         background-color: #f9f9f9;
     }
 
+    button{
+        background-color: #130f40;
+        color:white;
+        font-weight:bold;
+        border-radius:10px;
+        padding:10px;
+        border:none;
+        margin:10px 10px;
+    }
+
+    button:hover{
+            background-color: #535c68;
+    }
+
 </style>
 
 <div class="table">
-    <h2>List of Employee</h2>
+    <h2>List of Employees</h2>
     <div class="heading-button">
-        <button>Highlight Salary</button>
-        <button>Highlight Name</button>
+        <button onclick="HighlightSalaryColumn()">Highlight Salary</button>
+        <button onclick ="HighlightNameColumn()">Highlight Name</button>
     </div>
     <div class="table-data">
         <table>
@@ -51,11 +72,45 @@
                         <td>@item.Name</td>
                         <td>@item.Position</td>
                         <td>@item.Salary</td>
-                        <td>@item.JoiningDate.Date</td>
+                        <td>@item.JoiningDate.ToString("yyyy-MM-dd")</td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
 </div>
+
+<script>
+    function HighlightNameColumn() 
+    {
+        var table = document.querySelector('table'); // Get the table element
+        var rows = table.getElementsByTagName('tr'); // Get all rows of the table
+
+        for (var i = 0; i < rows.length; i++) 
+        {
+            var cells = rows[i].getElementsByTagName('td'); // Get cells in each row
+
+            if (cells.length > 1)  // Check if there are more than one cell
+            {           
+                cells[1].style.fontWeight = 'bold'; // Change the font weight of the second cell (index 1 is 'Name' column)
+                cells[1].style.color = 'blue'; // Change the color of the 'Name' column
+            }
+        }
+    }
+
+    function HighlightSalaryColumn() {
+        var table = document.querySelector('table'); // Get the table element
+        var rows = table.getElementsByTagName('tr'); // Get all rows of the table
+
+        for (var i = 0; i < rows.length; i++) {
+            var cells = rows[i].getElementsByTagName('td'); // Get cells in each row
+
+            if (cells.length > 3)  // Check if there are more than one cell
+            {
+                cells[3].style.fontWeight = 'bold'; // Change the font weight of the second cell (index 1 is 'Name' column)
+                cells[3].style.color = 'green'; // Change the color of the 'Name' column
+            }
+        }
+    }
+</script>
 

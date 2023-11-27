@@ -25,6 +25,7 @@ button:hover {
     width: 350px;
     background-color: #34495e;
     margin: 50px auto;
+    border-radius:10px;
 }
 
 input{
