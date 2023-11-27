@@ -9,5 +9,6 @@ namespace Royex.Domain.Entity
         public Position Position { get; set; }
         public int Salary { get; set; }
         public DateTime JoiningDate { get; set; }
+        public bool IsBonusAdded { get; set; } = false;
     }
 }

@@ -7,6 +7,7 @@ namespace Royex.Domain.RepositoryInterface
     {
         bool IsLeapYear();
         bool IsStayedFourYears(DateTime joiningDate);
-        bool IsEmployeeJoinedBeforeManager(DateTime magerJoingDate, DateTime employeeJoiningDate);
+        bool IsManagerJoinedBerforImidiateManager(DateTime magerJoingDate, DateTime imidiateManagerJoiningDate);
+        Employee ImidiateManager(IEnumerable<Employee> employees,Employee employee);
     }
 }

@@ -32,32 +32,66 @@ namespace Royex.Application.Feature.Queries.User
                 var allChainEmployee = await applicationUnitofWork.EmployeeRepository.GetAllAsync(x => 
                     (int)x.Position <= foundEmployeePosition,request.trackChange, cancellationToken);
 
-                // Get Manager joining date 
-                var manager = allChainEmployee.Where(x => x.Position == Position.Manager).FirstOrDefault();
-                DateTime managerJoiningDate = manager.JoiningDate; 
-
                 foreach(var item in allChainEmployee)
                 {
-                    if(item.Position == Position.Manager)
+                    if (item.Position == Position.Manager)
                     {
+                        // Get Root Manager joining date 
+                        var managerJoiningDate = item.JoiningDate;
+
+                        //Get Emidiate Manager
+                        var getEmidiateJoiningManager = applicationUnitofWork.EmployeeRepository.ImidiateManager(allChainEmployee, item);
+
+                        //Check Imidiate Manager has or hasn't
+                        bool hasImidiatemanger = false;
+
+                        if(getEmidiateJoiningManager != null)
+                        {
+                            //Check the manager joined before its imidiate manager or not
+                            hasImidiatemanger = applicationUnitofWork.EmployeeRepository
+                              .IsManagerJoinedBerforImidiateManager(managerJoiningDate,getEmidiateJoiningManager.JoiningDate);
+                        }
+
+                        //check Root Manager staying 4 years or not and current year is leap year 
                         var isFourYears = applicationUnitofWork.EmployeeRepository.IsStayedFourYears(managerJoiningDate);
                         var isLeapYear = applicationUnitofWork.EmployeeRepository.IsLeapYear();
-                        
-                        if(isFourYears && isLeapYear)
+
+                        //According to salary with Bonus calculation Logic
+                        if (isFourYears && isLeapYear)
                         {
                             item.Salary += 10000 * 1000;
+
+                            if(hasImidiatemanger)
+                            {
+                                item.Salary += 2000 + 10000;
+                            }
                         }
-                        else if(isFourYears && !isLeapYear)
+                        else if (isFourYears && !isLeapYear)
                         {
                             item.Salary += 8000 * 1000;
+
+                            if (!hasImidiatemanger)
+                            {
+                                item.Salary += 1000 + 8000;
+                            }
                         }
                         else if (!isFourYears && isLeapYear)
                         {
                             item.Salary += 5000 * 1000;
+
+                            if (hasImidiatemanger)
+                            {
+                                item.Salary += 1000 + 5000;
+                            }
                         }
                         else if (!isFourYears && !isLeapYear)
                         {
                             item.Salary += 3000 * 1000;
+
+                            if (!hasImidiatemanger)
+                            {
+                                item.Salary += 5000 + 3000;
+                            }
                         }
                     }
                 }  

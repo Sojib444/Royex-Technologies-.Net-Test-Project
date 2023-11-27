@@ -17,6 +17,7 @@ namespace Royex.Persistance.Context.Configuration
                 Position = Domain.Entity.Shared.Position.Manager,
                 Salary = 200,
                 JoiningDate = new DateTime(2018, 1, 1),
+                IsBonusAdded = true,
             },
             new Employee()
             {
