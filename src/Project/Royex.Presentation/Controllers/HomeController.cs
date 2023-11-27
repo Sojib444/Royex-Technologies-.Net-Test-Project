@@ -19,6 +19,11 @@ namespace Royex.Presentation.Controllers
 
         public  IActionResult Index()
         {
+            if(TempData.ContainsKey("Message"))
+            {
+                ViewBag.Message = TempData["Message"];
+            }
+
             return View();
         }
 
@@ -32,7 +37,9 @@ namespace Royex.Presentation.Controllers
                 return View(result);
             }
 
-            return View();
+            TempData["Message"] = "Please provide valid employee id.";
+
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()

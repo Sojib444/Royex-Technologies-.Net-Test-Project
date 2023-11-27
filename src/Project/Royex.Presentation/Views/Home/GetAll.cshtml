@@ -83,32 +83,41 @@
 <script>
     function HighlightNameColumn() 
     {
-        var table = document.querySelector('table'); // Get the table element
-        var rows = table.getElementsByTagName('tr'); // Get all rows of the table
+        //get the table and row element
+        var table = document.querySelector('table'); 
+        var rows = table.getElementsByTagName('tr'); 
 
         for (var i = 0; i < rows.length; i++) 
         {
-            var cells = rows[i].getElementsByTagName('td'); // Get cells in each row
+            // Get cells in each row
+            var cells = rows[i].getElementsByTagName('td'); 
 
-            if (cells.length > 1)  // Check if there are more than one cell
+            // Check if there are more than one cell
+            if (cells.length > 1)  
             {           
-                cells[1].style.fontWeight = 'bold'; // Change the font weight of the second cell (index 1 is 'Name' column)
-                cells[1].style.color = 'blue'; // Change the color of the 'Name' column
+                cells[1].style.fontWeight = 'bold'; 
+                cells[1].style.color = 'blue';
             }
         }
     }
 
     function HighlightSalaryColumn() {
-        var table = document.querySelector('table'); // Get the table element
-        var rows = table.getElementsByTagName('tr'); // Get all rows of the table
 
-        for (var i = 0; i < rows.length; i++) {
-            var cells = rows[i].getElementsByTagName('td'); // Get cells in each row
+        //get the table and row element
+        var table = document.querySelector('table');
+        var rows = table.getElementsByTagName('tr');
 
-            if (cells.length > 3)  // Check if there are more than one cell
+        // Get cells in each row
+        for (var i = 0; i < rows.length; i++) 
+        {
+            // Get cells in each row
+            var cells = rows[i].getElementsByTagName('td'); 
+
+            // Check if there are more than one cell
+            if (cells.length > 3)  
             {
-                cells[3].style.fontWeight = 'bold'; // Change the font weight of the second cell (index 1 is 'Name' column)
-                cells[3].style.color = 'green'; // Change the color of the 'Name' column
+                cells[3].style.fontWeight = 'bold';
+                cells[3].style.color = 'green'; 
             }
         }
     }
