@@ -1,7 +1,61 @@
-﻿
+﻿@model List<EmployeeDto>
+
 @{
     ViewData["Title"] = "GetAll";
 }
 
-<h1>GetAll</h1>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+</style>
+
+<div class="table">
+    <h2>List of Employee</h2>
+    <div class="heading-button">
+        <button>Highlight Salary</button>
+        <button>Highlight Name</button>
+    </div>
+    <div class="table-data">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Postion</th>
+                    <th>Salary With Bonus</th>
+                    <th>Join Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.Position</td>
+                        <td>@item.Salary</td>
+                        <td>@item.JoiningDate.Date</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
 

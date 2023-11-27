@@ -26,6 +26,11 @@ namespace Royex.Presentation.Controllers
         {
             var result = await mediator.Send(new GetAllEmployeeUnderManagerQuery(id,trackChange:false,cancellationToken:default));
 
+            if(result != null)
+            {
+                return View(result);
+            }
+
             return View();
         }
 
