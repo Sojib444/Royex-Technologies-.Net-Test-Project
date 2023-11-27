@@ -34,7 +34,7 @@ namespace Royex.Application.Feature.Queries.User
 
                 foreach(var item in allChainEmployee)
                 {
-                    if (item.Position == Position.Manager)
+                    if (item.Position == Position.Manager && item.IsBonusAdded)
                     {
                         // Get Root Manager joining date 
                         var managerJoiningDate = item.JoiningDate;
